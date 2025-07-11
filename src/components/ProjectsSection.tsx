@@ -33,7 +33,11 @@ const ProjectsSection = () => {
   return (
     <section className="py-20 px-4 bg-black">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-16">
+        <h2 className={`text-3xl md:text-4xl font-bold text-white text-center mb-16 transform transition-all duration-800 ${
+          isVisible 
+            ? 'translate-y-0 opacity-100 scale-100' 
+            : 'translate-y-12 opacity-0 scale-95'
+        }`}>
           Featured Projects
         </h2>
         
@@ -41,14 +45,15 @@ const ProjectsSection = () => {
           {projects.map((project, index) => (
             <div
               key={project.title}
-              className={`bg-card border border-gray-700 rounded-lg p-8 transition-all duration-700 hover:scale-[1.02] hover:border-gray-500 glow-effect ${
+              className={`bg-card border border-gray-700 rounded-lg p-8 transition-all duration-1000 hover:scale-[1.02] hover:border-gray-500 hover:-translate-y-1 glow-effect ${
                 isVisible 
-                  ? 'translate-y-0 opacity-100' 
-                  : 'translate-y-12 opacity-0'
+                  ? 'translate-x-0 opacity-100 rotate-0' 
+                  : index % 2 === 0 
+                    ? '-translate-x-16 opacity-0 -rotate-1' 
+                    : 'translate-x-16 opacity-0 rotate-1'
               }`}
               style={{ 
-                animationDelay: isVisible ? `${index * 0.2}s` : '0s',
-                transitionDelay: `${index * 0.1}s`
+                transitionDelay: isVisible ? `${index * 0.2}s` : '0s'
               }}
             >
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
@@ -59,7 +64,7 @@ const ProjectsSection = () => {
                   <Button 
                     variant="outline" 
                     size="sm"
-                    className="border-gray-600 text-gray-300 hover:text-white"
+                    className="border-gray-600 text-gray-300 hover:text-white hover:scale-105 transition-all duration-300"
                   >
                     <Github className="w-4 h-4 mr-2" />
                     Code
@@ -67,7 +72,7 @@ const ProjectsSection = () => {
                   <Button 
                     variant="outline" 
                     size="sm"
-                    className="border-gray-600 text-gray-300 hover:text-white"
+                    className="border-gray-600 text-gray-300 hover:text-white hover:scale-105 transition-all duration-300"
                   >
                     <ExternalLink className="w-4 h-4 mr-2" />
                     Demo
@@ -80,10 +85,17 @@ const ProjectsSection = () => {
               </p>
               
               <div className="flex flex-wrap gap-2">
-                {project.tech.map((tech) => (
+                {project.tech.map((tech, techIndex) => (
                   <span 
                     key={tech}
-                    className="px-3 py-1 bg-gray-800 text-gray-300 text-sm rounded-full border border-gray-700"
+                    className={`px-3 py-1 bg-gray-800 text-gray-300 text-sm rounded-full border border-gray-700 hover:scale-105 transition-all duration-300 ${
+                      isVisible 
+                        ? 'translate-y-0 opacity-100' 
+                        : 'translate-y-4 opacity-0'
+                    }`}
+                    style={{ 
+                      transitionDelay: isVisible ? `${(index * 0.2) + (techIndex * 0.1)}s` : '0s'
+                    }}
                   >
                     {tech}
                   </span>

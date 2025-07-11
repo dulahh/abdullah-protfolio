@@ -11,10 +11,10 @@ const ResumeSection = () => {
       <div className="max-w-4xl mx-auto text-center">
         <div
           ref={ref}
-          className={`transform transition-all duration-800 ${
+          className={`transform transition-all duration-1000 ${
             isVisible 
-              ? 'scale-100 opacity-100' 
-              : 'scale-95 opacity-0'
+              ? 'scale-100 opacity-100 translate-y-0 rotate-0' 
+              : 'scale-90 opacity-0 translate-y-12 rotate-3'
           }`}
         >
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
@@ -28,10 +28,10 @@ const ResumeSection = () => {
           
           <Button
             size="lg"
-            className={`bg-white text-black hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 glow-effect ${
+            className={`bg-white text-black hover:bg-gray-200 transition-all duration-500 transform hover:scale-110 hover:-translate-y-1 glow-effect ${
               isVisible 
-                ? 'translate-y-0 opacity-100 delay-200' 
-                : 'translate-y-4 opacity-0'
+                ? 'translate-y-0 opacity-100 delay-300 rotate-0' 
+                : 'translate-y-8 opacity-0 -rotate-6'
             }`}
           >
             <Download className="w-5 h-5 mr-2" />
