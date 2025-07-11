@@ -81,6 +81,14 @@
     animation-delay: 0.4s;
   }
 
+  .animate-stagger-5 {
+    animation-delay: 0.5s;
+  }
+
+  .bg-gradient-radial {
+    background: radial-gradient(circle, var(--tw-gradient-stops));
+  }
+
   @keyframes fadeInUp {
     from {
       opacity: 0;
