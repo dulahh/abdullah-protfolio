@@ -2,9 +2,11 @@
 import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ChevronDown } from 'lucide-react';
+import { useTypewriter } from '@/hooks/useTypewriter';
 
 const HeroSection = () => {
   const [isLoaded, setIsLoaded] = useState(false);
+  const typedText = useTypewriter('AI Engineer | Machine Learning Specialist', 100, 1000);
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoaded(true), 100);
@@ -23,8 +25,8 @@ const HeroSection = () => {
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
           Muhammad Abdullah Majid
         </h1>
-        <p className="text-xl md:text-2xl text-gray-300 mb-2 font-light">
-          AI Engineer | Machine Learning Specialist
+        <p className="text-xl md:text-2xl text-gray-300 mb-2 font-light h-8">
+          {typedText}<span className="animate-blink">|</span>
         </p>
         <p className="text-lg md:text-xl text-gray-400 mb-12 font-light">
           Turning Intelligence Into Impact — One Algorithm at a Time

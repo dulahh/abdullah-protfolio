@@ -37,17 +37,19 @@ const ResumeSection = () => {
             education, and technical expertise in AI and machine learning.
           </p>
           
-          <Button
-            size="lg"
-            className={`bg-white text-black hover:bg-gray-200 transition-all duration-500 transform hover:scale-110 hover:-translate-y-1 glow-effect ${
-              isVisible 
-                ? 'translate-y-0 opacity-100 delay-300 rotate-0' 
-                : 'translate-y-8 opacity-0 -rotate-6'
-            }`}
-          >
-            <Download className="w-5 h-5 mr-2" />
-            Download Resume
-          </Button>
+          <a href="/my_resume.pdf" download>
+  <Button
+    size="lg"
+    className={`bg-white text-black hover:bg-gray-200 transition-all duration-500 transform hover:scale-110 hover:-translate-y-1 glow-effect ${
+      isVisible 
+        ? 'translate-y-0 opacity-100 delay-300 rotate-0' 
+        : 'translate-y-8 opacity-0 -rotate-6'
+    }`}
+  >
+    <Download className="w-5 h-5 mr-2" />
+    Download Resume
+  </Button>
+</a>
         </div>
       </div>
     </section>

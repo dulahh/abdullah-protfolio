@@ -1,6 +1,6 @@
 
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { Code, Database, Brain, Github, Globe, Cpu, Zap, BookOpen } from 'lucide-react';
+import { Code, Database, Brain, Github, Globe, Cpu, Zap, BookOpen,Share2,Bot,Boxes, } from 'lucide-react';
 
 const SkillsSection = () => {
   const { ref, isVisible } = useScrollAnimation(0.2);
@@ -14,6 +14,9 @@ const SkillsSection = () => {
     { name: 'LangChain', icon: BookOpen, category: 'LLM' },
     { name: 'MongoDB', icon: Database, category: 'Database' },
     { name: 'GitHub', icon: Github, category: 'Version Control' },
+    { name: 'Langgraph', icon: Share2, category: 'LLM Framework' },
+    { name: 'OpenAI SDK', icon: Bot, category: 'LLM Framework' },
+    { name: 'Doker', icon: Boxes, category: 'Deployment' },
   ];
 
   return (
